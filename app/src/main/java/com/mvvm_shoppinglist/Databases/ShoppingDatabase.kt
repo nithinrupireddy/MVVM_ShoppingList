@@ -14,7 +14,7 @@ import com.mvvm_shoppinglist.Entities.ShoppingItem
 * Next we get access to ShoppingDAO class
 * Companion object is nothing but static in JAVA
 * @volatile is used when we want to use same instance in different threads simultaneously instead of creating multiply
-* When instance is null we are called syncronized block
+* When instance is null we are called synchronized block
 * Synchronized block blocks all threads to access instance
 * In synchronized block we check again whether instance is null ,if not null we call create database
 */
@@ -40,7 +40,7 @@ abstract class ShoppingDatabase : RoomDatabase() {
             instance ?: createDatabase(context).also { instance=it }
         }
 
-        private fun createDatabase(context: Context)=
+        private fun createDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext,
                 ShoppingDatabase::class.java,"ShoppingDB.db").build()
 
