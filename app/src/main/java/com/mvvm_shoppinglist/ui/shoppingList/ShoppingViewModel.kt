@@ -10,6 +10,8 @@ import kotlinx.coroutines.launch
 
 /*
 * here no need of adding suspend keyword because we are defining methods
+* in CoroutineScope - > Dispatchers.Main is used for shor performming task
+* Dispatchers.Default for long running tasks
 * */
 
 
